@@ -10,12 +10,14 @@ public class App extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
+	
 	private PainelCadastro abaCadastro = new PainelCadastro();
 	private PainelLista abaLista = new PainelLista();
 	private JTabbedPane abas = new JTabbedPane();
 	
 	public static void main(String[] args) {
-		new App().init();
+		App app = new App();
+		app.init();
 	}
 
 	private void init() {
@@ -26,8 +28,6 @@ public class App extends JFrame {
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(600, 400);
-		setVisible(true);
-		
+		setVisible(true);		
 	}
-	
 }
