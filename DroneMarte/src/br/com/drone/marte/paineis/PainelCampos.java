@@ -23,7 +23,6 @@ public class PainelCampos extends JPanel {
 		setLayout(new GridLayout(6, 1));
 		setBorder(new EmptyBorder(20, 15, 20, 10));
 		init();
-		
 	}
 
 	private void init() {
@@ -59,8 +58,5 @@ public class PainelCampos extends JPanel {
 	public JComboBox<String> getRota() {
 		return rota;
 	}
-
-	
-	
 
 }
