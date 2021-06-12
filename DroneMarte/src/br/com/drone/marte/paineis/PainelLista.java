@@ -8,9 +8,11 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import br.com.drone.marte.dao.Dao;
@@ -25,26 +27,29 @@ public class PainelLista extends JPanel implements ActionListener {
 	private JButton editar = new JButton("editar");
 	private JTable tabela = new JTable(modelo);
 	
-	private JLabel lista = new JLabel("Lista de voos");
+	private JLabel lista = new JLabel("Para editar qualquer item, selecione e clique duas vezes, após finalizar clique em editar.");
 	
 	public PainelLista() {
 		init();
 	}
 
 	private void init() {
-		add(lista);
+		
 		modelo.addColumn("Id");
 		modelo.addColumn("pressao");
 		modelo.addColumn("velocidade");
 		modelo.addColumn("duracao");
 		modelo.addColumn("altitude");
 		modelo.addColumn("rota");
-
 		carregarDados();
 		
+		TitledBorder title = BorderFactory.createTitledBorder("Lista de voos");
+		
+		
 		JScrollPane painelTabela = new JScrollPane(tabela);
-		painelTabela.setSize(180,150);
 		add(painelTabela);
+		painelTabela.setBorder(title);
+		add(lista);
 		
 		JPanel botoes = new JPanel();
 		botoes.add(editar);
@@ -56,9 +61,7 @@ public class PainelLista extends JPanel implements ActionListener {
 		editar.addActionListener(this);
 		carregar.addActionListener(this);
 		apagar.addActionListener(this);
-		
-		//setDefaultCloseOperation(EXIT_ON_CLOSE);
-		//setSize(400, 200);
+
 		setVisible(true);
 	}
 	
@@ -88,7 +91,6 @@ public class PainelLista extends JPanel implements ActionListener {
 		String id = tabela.getValueAt(linha, 0).toString();
 		Drone drone = dao.buscarPorId(Long.valueOf(id));
 		int resposta = JOptionPane.showConfirmDialog(this, "Tem certeza que quer apagar o drone selecionado?");
-		//dao.apagarPeloId(Long.valueOf(id));
 		if (resposta == JOptionPane.YES_OPTION) {
 			dao.apagar(drone);
 			carregarDados();

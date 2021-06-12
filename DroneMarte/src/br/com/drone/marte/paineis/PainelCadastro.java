@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 public class PainelCadastro extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
 	private PainelCampos campos = new PainelCampos();
 	private PainelBotoes botoes = new PainelBotoes(this);
 	

@@ -13,7 +13,7 @@ import br.com.drone.marte.util.JPAUtil;
 public class Dao {
 
 	EntityManager manager = JPAUtil.getManager();
-	
+
 	public void criar(Drone drone) {
 		
 		EntityManagerFactory factory = 
