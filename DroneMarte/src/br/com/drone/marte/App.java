@@ -27,7 +27,7 @@ public class App extends JFrame {
 		add(abas);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(600, 400);
+		setSize(700, 600);
 		setVisible(true);		
 	}
 }

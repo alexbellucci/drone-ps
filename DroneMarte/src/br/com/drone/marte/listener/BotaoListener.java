@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import br.com.drone.marte.dao.Dao;
 import br.com.drone.marte.model.Drone;
 import br.com.drone.marte.paineis.PainelCadastro;
-import br.com.drone.marte.paineis.PainelEditar;
 
 public class BotaoListener implements ActionListener {
 

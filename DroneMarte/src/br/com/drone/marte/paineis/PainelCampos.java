@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 public class PainelCampos extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private JTextField pressao = new JTextField();
 	private JTextField velocidade = new JTextField();
 	private JTextField duracao = new JTextField();
